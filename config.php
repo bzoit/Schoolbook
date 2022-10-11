@@ -1,8 +1,8 @@
 <?php
-    const USER = 'root';
-    const PASSWORD = '';
-    const HOST = '127.0.0.1';
-    const DATABASE = 'test';
+    const USER = '[USERNAME]';
+    const PASSWORD = '[PASSWORD]';
+    const HOST = '[HOST]';
+    const DATABASE = '[SCHEMA]';
     try {
         $connection = new PDO("mysql:host=".HOST.";dbname=".DATABASE, USER, PASSWORD);
     } catch (PDOException $e) {
