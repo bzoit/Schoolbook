@@ -1,0 +1,280 @@
+body {
+    font-family: 'Anek Telugu', sans-serif;
+}
+
+#menuBtn {
+    left: 100px;
+    position: absolute;
+    transform: scale(0.7);
+    transition: opacity 1s, background 0.6s;
+    border-radius: 5px;
+}
+
+#menuBtn:hover {
+    background-color: #BFBFBF;
+}
+
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a, #subList {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, #subList:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#headerCntr {
+    width: 100%;
+    text-align: center;
+    margin: 45px auto auto;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media all and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+ul {
+    list-style: none;
+}
+
+@media all and (min-width: 300px) { /* Phones */
+    #menuBtn {
+        left: 10px;
+        top: 20px;
+        transform: scale(0.6);
+    }
+
+    #calendarCntr {
+        position: relative;
+        top: 50px;
+    }
+}
+
+@media all and (min-width: 650px) { /* Tablets */
+    #menuBtn {
+        transform: scale(0.75);
+    }
+
+    #headerCntr {
+        margin-top: 100px;
+    }
+}
+
+@media all and (min-width: 1200px) { /* Laptops */
+    #menuBtn {
+        margin-top: 20px;
+        transform: scale(0.75);
+        margin-left: 50px;
+    }
+}
+
+@media all and (min-width: 1700px) { /* Desktop */
+    #menuBtn {
+        transform: scale(1);
+    }
+
+    .sidenav a:not(.closebtn), #subList {
+        font-size: 1.9rem;
+    }
+}
+
+@media all and (min-width: 2500px) { /* Large Screen */
+    #menuBtn {
+        transform: scale(1.1);
+        margin-top: 50px;
+        margin-left: 100px;
+    }
+
+    .sidenav a:not(.closebtn), #subList {
+        font-size: 2.1rem;
+    }
+
+    .closebtn {
+        font-size: 50px;
+    }
+
+    #headerCntr {
+        line-height: 200px;
+    }
+}
+
+* {box-sizing: border-box;}
+ul {list-style-type: none;}
+
+.month {
+    padding: 70px 25px;
+    width: 100%;
+    background: cornflowerblue;
+    text-align: center;
+}
+
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color: #ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+#calendarCntr {font-family: Verdana, sans-serif;}
+
+#days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+#days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 17px;
+    color: #777;
+}
+
+#days li .active {
+    padding: 4px;
+    background: #64e2ed;
+    color: white !important
+}
+
+/* Add media queries for smaller screens */
+@media screen and (max-width:720px) {
+    .weekdays li, #days li {width: 13.1%;}
+}
+
+@media screen and (max-width: 420px) {
+    .weekdays li, #days li {width: 12.5%;}
+    #days li .active {padding: 2px;}
+}
+
+@media screen and (max-width: 290px) {
+    .weekdays li, #days li {width: 12.2%;}
+}
+
+.event {
+    line-height: 10px;
+    display: table-cell;
+}
+
+.eventCntr {
+    width: 100%;
+    text-align: center;
+    display: table;
+}
+
+body > .eventCntr {
+    margin-top: 100px;
+}
+
+body > .eventCntr ~ .eventCntr {
+    margin-top: 50px;
+}
+
+.eventHeader {
+    font-size: 1.4rem;
+    color: #616161;
+}
+
+.eventTitle {
+    font-size: 1.6rem;
+}
+
+@media all and (max-width: 650px) {
+    .event {
+        line-height: 10px;
+    }
+
+    body > .eventCntr ~ .eventCntr {
+        margin-top: 25px;
+    }
+
+    .eventHeader {
+        font-size: 1.2rem;
+        line-height: 20px;
+    }
+
+    .eventTitle {
+        font-size: 1.3rem;
+        line-height: 30px;
+    }
+}
+
+@media all and (min-width: 1700px) {
+    .event {
+        line-height: 0;
+    }
+
+    body > .eventCntr ~ .eventCntr {
+        margin-top: 25px;
+    }
+
+    .eventHeader {
+        font-size: 1.5rem;
+        line-height: 20px;
+    }
+
+    .eventTitle {
+        font-size: 1.8rem;
+        line-height: 30px;
+    }
+}
